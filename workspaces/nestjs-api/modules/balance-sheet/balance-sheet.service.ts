@@ -13,6 +13,7 @@ export class BalanceSheetService {
       if (balanceSheet === null) {
          throw new NotFoundException(`Balance sheet not available for the business`)
       }
+      
       return balanceSheet;
    }
 }
