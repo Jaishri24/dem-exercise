@@ -1,4 +1,4 @@
 export enum AccountingProviders{
-    Xero,
-    MYOB
+    Xero = 'Xero',
+    MYOB = 'MYOB'
 }

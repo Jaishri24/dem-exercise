@@ -15,14 +15,14 @@ describe('MYOBClientService', () => {
   });
 
   it('should provide abn balance sheet', async () => {
-    const abnDetails = await service.getBusinessBalanceSheet("BUSINESS1");
+    const abnDetails = await service.getBusinessBalanceSheet('BUSINESS1');
     expect(abnDetails).toBeDefined();
-    expect(abnDetails.abn).toEqual("BUSINESS1");
+    expect(abnDetails.abn).toEqual('BUSINESS1');
     expect(abnDetails.balanceSheet.length).toEqual(4);
   });
 
   it('should provide null for invalid abn', async () => {
-    const abnDetails = await service.getBusinessBalanceSheet("Invalid");
-    expect(abnDetails).toBeNull();
+    const abnDetails = await service.getBusinessBalanceSheet('Invalid');
+    expect(abnDetails).toBeUndefined();
   });
 });

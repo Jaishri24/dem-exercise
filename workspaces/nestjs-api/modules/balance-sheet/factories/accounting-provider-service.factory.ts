@@ -12,12 +12,14 @@ export class AccountingProviderServiceFactory {
 
     public getProvider(provider: AccountingProviders) {
         switch (provider) {
-            case AccountingProviders.MYOB:
-            default: {
+            case AccountingProviders.MYOB: {
                 return this.mYOBClientService;
             }
             case AccountingProviders.Xero: {
                 return this.xeroClientService;
+            }
+            default: {
+                return undefined;
             }
         }
     }

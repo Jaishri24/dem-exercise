@@ -23,6 +23,9 @@
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.3.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
@@ -57,7 +60,6 @@
     ],
     "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
-    
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
@@ -65,13 +67,13 @@
     "testEnvironment": "node",
     "collectCoverage": false,
     "coveragePathIgnorePatterns": [
-        "node_modules",
-        "test-config",
-        "interfaces",
-        "jestGlobalMocks.ts",
-        ".module.ts",
-        "<rootDir>/src/app/main.ts",
-        ".mock.ts"
+      "node_modules",
+      "test-config",
+      "interfaces",
+      "jestGlobalMocks.ts",
+      ".module.ts",
+      "<rootDir>/src/app/main.ts",
+      ".mock.ts"
     ]
   }
 }

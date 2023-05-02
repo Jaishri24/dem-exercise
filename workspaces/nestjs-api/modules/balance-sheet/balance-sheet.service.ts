@@ -9,8 +9,11 @@ export class BalanceSheetService {
 
    async getBusinessBalanceSheet(provider: AccountingProviders, abn: string) {
       const providerService = await this.accountingProviderServiceFactory.getProvider(provider);
+      if(!providerService){
+         throw new NotFoundException(`Accounting provider is not available`)
+      }
       const balanceSheet = await providerService.getBusinessBalanceSheet(abn);
-      if (balanceSheet === null) {
+      if (!balanceSheet) {
          throw new NotFoundException(`Balance sheet not available for the business`)
       }
       

@@ -1,5 +1,4 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { NotFoundException } from '@nestjs/common';
 import { AccountingProviderServiceFactory } from './accounting-provider-service.factory';
 import { MYOBClientService } from '../../../libs/myob-client/src/myob-client.service';
 import { XeroClientService } from '../../../libs/xero-client/src/xero-client.service';
@@ -36,6 +35,6 @@ describe('AccountingProviderServiceFactory', () => {
 
     it('should throw an exception for invalid business from selected provider', async () => {
         const provider = await service.getProvider(undefined);
-        expect(provider).toEqual({});
+        expect(provider).toBeUndefined();
     });
 });

@@ -1,4 +1,4 @@
-import { XeroClientModule } from "./xero-client.module";
-import { XeroClientService } from "./xero-client.service";
+import { XeroClientModule } from './xero-client.module';
+import { XeroClientService } from './xero-client.service';
 
-export {XeroClientModule, XeroClientService};
+export { XeroClientModule, XeroClientService };

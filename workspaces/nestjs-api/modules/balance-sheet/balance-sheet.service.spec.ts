@@ -54,8 +54,15 @@ describe('BalanceSheetService', () => {
 
     it('should throw an error for valid AccountingProvider and invalid business', async () => {
         mockAccountingProviderServiceFactory.getProvider.mockReturnValue(new MYOBClientService());
-        mockprovider.getBusinessBalanceSheet.mockReturnValue(null);
+        mockprovider.getBusinessBalanceSheet.mockReturnValue(undefined);
         await expect(service.getBusinessBalanceSheet(AccountingProviders.MYOB, "Invalid"))
         .rejects.toThrowError('Balance sheet not available for the business');
+    });
+
+    it('should throw an error for invalid AccountingProvider', async () => {
+        mockAccountingProviderServiceFactory.getProvider = jest.fn((r) =>undefined);
+        mockprovider.getBusinessBalanceSheet.mockReturnValue(null);
+        await expect(service.getBusinessBalanceSheet(undefined, "Business1"))
+        .rejects.toThrowError('Accounting provider is not available');
     });
 });

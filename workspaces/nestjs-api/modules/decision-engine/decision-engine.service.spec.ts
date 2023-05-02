@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { DecisionEngineService } from './descision-engine.service';
+import { DecisionEngineService } from './decision-engine.service';
 import { DecisionModel } from './decision.model';
 
 describe('DecisionEngineService', () => {
@@ -17,7 +17,8 @@ describe('DecisionEngineService', () => {
     }
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
-            providers: [DecisionEngineService, 
+            providers: [
+                DecisionEngineService, 
             ],
         }).compile();
         service = module.get<DecisionEngineService>(DecisionEngineService);

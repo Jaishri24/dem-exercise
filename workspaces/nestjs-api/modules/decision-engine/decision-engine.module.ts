@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
-import { DecisionEngineService } from './descision-engine.service';
+import { DecisionEngineService } from './decision-engine.service';
 
 @Module({
     providers: [DecisionEngineService],
+    exports: [DecisionEngineService],
 })
 export class DescisionEngineModule { }

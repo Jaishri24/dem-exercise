@@ -1,3 +1,3 @@
 export interface BaseClientService {
-    getBusinessBalanceSheet(abn: string);
+  getBusinessBalanceSheet(abn: string);
 }
