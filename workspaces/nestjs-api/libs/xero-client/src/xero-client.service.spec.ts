@@ -18,7 +18,7 @@ describe('XeroClientService', () => {
     const abnDetails = await service.getBusinessBalanceSheet('BUSINESS1');
     expect(abnDetails).toBeDefined();
     expect(abnDetails.abn).toEqual('BUSINESS1');
-    expect(abnDetails.balanceSheet.length).toEqual(4);
+    expect(abnDetails.balanceSheet.length).toEqual(24);
   });
 
   it('should provide null for invalid abn', async () => {

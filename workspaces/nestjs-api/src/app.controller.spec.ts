@@ -5,7 +5,8 @@ import { BalanceSheetModule } from '../modules/balance-sheet/balance-sheet.modul
 import { DescisionEngineModule } from '../modules/decision-engine/decision-engine.module';
 import { DecisionEngineService } from '../modules/decision-engine/decision-engine.service';
 import { BalanceSheetService } from '../modules/balance-sheet/balance-sheet.service';
-import { LoanDetails } from './dto/business.model';
+import { LoanDetailsDto } from './dto/business.dto';
+import { LoanDto } from './dto/loan.dto';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -35,7 +36,7 @@ describe('AppController', () => {
       expect(appController).toBeDefined();
     });
 
-    it('should get the accounting providers', async () => {
+    it('should get the accounting providers with errors', async () => {
       const response = await appController.getProviders();
       expect(response).toBeDefined();
       expect(response.length).toEqual(2);
@@ -43,16 +44,30 @@ describe('AppController', () => {
     });
 
 
-    it('should get the balance sheet', async () => {
+    it('should get the balance sheet without errors', async () => {
       const request = {
         "business": {
           "ABN": "BUSINESS1"
         },
         "loanAmount": 10000,
         "provider": "MYOB"
-      } as LoanDetails;
+      } as LoanDetailsDto;
 
       const response = await appController.getBalanceSheet(request);
+      expect(response).toBeDefined();
+      
+    });
+
+    it('should submit a loan approval without errors', async () => {
+      const request = { "loanDetails": {
+        "business": {
+          "ABN": "BUSINESS1"
+        },
+        "loanAmount": 10000,
+        "provider": "MYOB"
+      } as LoanDetailsDto} as LoanDto;
+
+      const response = await appController.submitLoanApproval(request);
       expect(response).toBeDefined();
       
     });

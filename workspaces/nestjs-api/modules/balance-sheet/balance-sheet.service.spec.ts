@@ -38,7 +38,7 @@ describe('BalanceSheetService', () => {
         const abnDetails = await service.getBusinessBalanceSheet(AccountingProviders.Xero, "BUSINESS1");
         expect(abnDetails).toBeDefined();
         expect(abnDetails.abn).toEqual("BUSINESS1");
-        expect(abnDetails.balanceSheet.length).toEqual(4);
+        expect(abnDetails.balanceSheet.length).toEqual(24);
 
     });
 
@@ -48,7 +48,7 @@ describe('BalanceSheetService', () => {
         const abnDetails = await service.getBusinessBalanceSheet(AccountingProviders.MYOB, "BUSINESS2");
         expect(abnDetails).toBeDefined();
         expect(abnDetails.abn).toEqual("BUSINESS2");
-        expect(abnDetails.balanceSheet.length).toEqual(4);
+        expect(abnDetails.balanceSheet.length).toEqual(24);
 
     });
 

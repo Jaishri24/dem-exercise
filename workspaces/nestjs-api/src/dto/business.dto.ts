@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { AccountingProviders } from '../../modules/balance-sheet/enums/accounting-providers.enum';
 
-export class Business {
+export class BusinessDto {
   @ApiProperty({
     type: String,
     description: 'ABN Number',
@@ -11,13 +11,13 @@ export class Business {
   public ABN: string;
 }
 
-export class LoanDetails {
+export class LoanDetailsDto {
   @ApiProperty({
-    type: Business,
+    type: BusinessDto,
     description: 'Business Details',
     required: true,
   })
-  public business: Business;
+  public business: BusinessDto;
 
   @ApiProperty({
     type: Number,

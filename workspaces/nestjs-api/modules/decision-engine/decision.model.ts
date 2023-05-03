@@ -6,5 +6,5 @@ export class DecisionModel{
 export class BusinessDetails{
     public name: string;
     public yearEstablished: number;
-    public profitLossSummary: [number[], number[]];
+    public profitLossSummary: any[];
 }
