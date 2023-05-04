@@ -45,6 +45,14 @@ The docker compose automates the deployment of all the required services in one 
 ![image](https://user-images.githubusercontent.com/69181684/236178124-9382372b-86c6-4b7d-9795-1418ee19a9bf.png)
 
 
+**Execution**
 
+* Choose `BUSINESS1` or `BUSINESS2` and select any available providers and click submit
+
+![image](https://user-images.githubusercontent.com/69181684/236179223-757889c0-33bf-438e-86a2-cf0d81e7da46.png)
+
+* Click on the request loan
+
+![image](https://user-images.githubusercontent.com/69181684/236179646-21e38ccc-bc22-465b-9d2f-c392afba4c1b.png)
 
 
